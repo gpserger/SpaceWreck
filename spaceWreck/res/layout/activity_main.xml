@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+<!--I didn't spend too much time making the layout good and symmetrical -->
+    <Button
+        android:id="@+id/placeX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Place X" />
+
+    <Button
+        android:id="@+id/up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:text="^" />
+
+    <Button
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/up"
+        android:layout_below="@+id/up"
+        android:text="V" />
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/up"
+        android:layout_toRightOf="@+id/up"
+        android:text=">" />
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/down"
+        android:layout_alignBottom="@+id/down"
+        android:layout_toLeftOf="@+id/down"
+        android:text="&lt;" />
+
+    <TextView
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/right"
+        android:layout_below="@+id/placeX"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="95dp"
+        android:text="@string/Textview"
+        android:textSize="40sp" />
+
+</RelativeLayout>
