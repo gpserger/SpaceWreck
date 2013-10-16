@@ -12,7 +12,7 @@ public class MainActivity extends Activity {
     private int row;
     private int col;
     
-    public void MainActivity(){
+    public MainActivity(){
         //Detta ar en constructor, dvs denna function/method anropas automatiskt nar du skapar ett ny object av typ MainActivity
         myArray = new String[3][3];
         
@@ -31,19 +31,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Multidimensional array for coordinate system. 
-        //For better GUI, i would use IDs like 0 is air, 1 is stone e.t.c. and they would have different properties.
-   		/*String array[][]={{"0 "," 0 "," 0"},
-   						  {"0 "," 0 "," 0"},
-				          {"0 "," 0 "," 0"}};*/
-   		//Keep track of where the "cursor"/"Character" is.
+       
    		
    		
    		//Print the array.
    		printText();//array);
    		
    		//Wait for user to press "Place X".
-   	    setButtonClickListener();
+   	    setButtonClickListener();//To place X
+   	    setButtonClickListenerUp();//Move up
+   	    setButtonClickListenerDown();//Move down
+   	    setButtonClickListenerRight();//Move right
+   	    setButtonClickListenerLeft();//Move left
+   	 
+   	    
+   	    
     }
     private void printText(){//String array[][]) {
     	/*TextViews are XML widgets (see "spaceWreck/res/activity_main.xml")
@@ -63,16 +65,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v/*Not sure what View v is */) {
 				// TODO Auto-generated method stub
-				/*I had to make a copy of the array because i couldn't access it for some reason even when I called the 
-				method like: "setButtonClickListener(array);" and the method is "made" like this: 
-				"private void setButtonClickListener(String array[][]){}"
-				a*/
-				/*String array[][]={{"0 "," 0 "," 0"},
- 						  		  {"0 "," 0 "," 0"},
- 						  		  {"0 "," 0 "," 0"}};*/
-				myArray[1][1] = "X";
-				row = 1;
-				col = 1;
+				
+				myArray[1][1] = "X";//"Print" the X in the array
+				row = 1;//Place the "master" vertical point of the X
+				col = 1;//Place the "master" horizontal point of the X
 				
 				printText();//array);
 			}
@@ -86,13 +82,64 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//I'm supposed to move the X up here
-				if(row!=0){
-				myArray[row][col]="0";
-				row--;
-				myArray[row][col]="X";
-				printText();
+				if(row!=0){//Make sure the X can move up
+					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+					row--;//Move the "master" vertical point up
+					myArray[row][col]="X";//Replace the X in the array
+				printText();//print array to the user
 				}
 			}
 		});
+    }
+    private void setButtonClickListenerDown() {
+   	 Button toggleButton = (Button)findViewById(R.id.down);
+   	 toggleButton.setOnClickListener(new View.OnClickListener() {
+			//This is the second of the four directional buttons
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				//I'm supposed to move the X down here
+				if(row!=2){//Make sure the X can move down
+					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+					row++;//Move the "master" vertical point down
+					myArray[row][col]="X";//Replace the X in the array
+				printText();//print array to the user
+				}
+			}
+		});
+   	}
+   	private void setButtonClickListenerRight() {
+      	 Button toggleButton = (Button)findViewById(R.id.right);
+      	 toggleButton.setOnClickListener(new View.OnClickListener() {
+   			//This is the second of the four directional buttons
+   			@Override
+   			public void onClick(View v) {
+   				// TODO Auto-generated method stub
+   				//I'm supposed to move the X right here
+   				if(col!=2){//Make sure the X can move right
+   					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+   					col++;//Move the "master" horizontal point right
+   					myArray[row][col]="X";//Replace the X in the array
+   				printText();//print array to the user
+   				}
+   			}
+   		});
    	 }
+   	private void setButtonClickListenerLeft() {
+     	 Button toggleButton = (Button)findViewById(R.id.left);
+     	 toggleButton.setOnClickListener(new View.OnClickListener() {
+  			//This is the second of the four directional buttons
+  			@Override
+  			public void onClick(View v) {
+  				// TODO Auto-generated method stub
+  				//I'm supposed to move the X left here
+  				if(col!=0){//Make sure the X can move left
+  					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+  					col--;//Move the "master" horizontal point left
+  					myArray[row][col]="X";//Replace the X in the array
+  				printText();//print array to the user
+  				}
+  			}
+  		});
+  	 }
 }
