@@ -3,6 +3,11 @@
 
     <string name="app_name">space wreck</string>
     <string name="action_settings">Settings</string>
-    <string name="Textview">ahahahaha</string>
+    <string name="Textview">000</string>
+    <string name="toggle_x">Toggle X</string>
+    <string name="rightText">></string>
+    <string name="downText">V</string>
+    <string name="leftText">&lt;</string>
+    <string name="upText">^</string>
 
 </resources>

@@ -11,6 +11,7 @@ public class MainActivity extends Activity {
     private String[][] myArray;
     private int row;
     private int col;
+    Boolean XExist = false;
     
     public MainActivity(){
         //Detta ar en constructor, dvs denna function/method anropas automatiskt nar du skapar ett ny object av typ MainActivity
@@ -38,7 +39,7 @@ public class MainActivity extends Activity {
    		printText();//array);
    		
    		//Wait for user to press "Place X".
-   	    setButtonClickListener();//To place X
+   	    setButtonClickListenerX();//To place X
    	    setButtonClickListenerUp();//Move up
    	    setButtonClickListenerDown();//Move down
    	    setButtonClickListenerRight();//Move right
@@ -58,7 +59,7 @@ public class MainActivity extends Activity {
    		
     }
     
-    private void setButtonClickListener() {
+    private void setButtonClickListenerX() {
     	 Button toggleButton = (Button)findViewById(R.id.placeX);
     	 toggleButton.setOnClickListener(new View.OnClickListener() {
     		 //This method was mostly copied from http://developer.android.com/reference/android/widget/Button.html
@@ -66,10 +67,17 @@ public class MainActivity extends Activity {
 			public void onClick(View v/*Not sure what View v is */) {
 				// TODO Auto-generated method stub
 				
-				myArray[1][1] = "X";//"Print" the X in the array
-				row = 1;//Place the "master" vertical point of the X
-				col = 1;//Place the "master" horizontal point of the X
-				
+				if(XExist==false){
+					myArray[1][1] = "X";//"Print" the X in the array
+					XExist = true;//Let the program know that X now exists
+					row = 1;//Place the "master" vertical point of the X
+					col = 1;//Place the "master" horizontal point of the X
+				}else{
+					myArray[row][col]="0";//Remove the X
+					XExist = false;//Let the program know the X is gone
+					row = 1;//Reset horizontal coordinates for X
+					col = 1;//Reset vertical coordinates for X
+				}
 				printText();//array);
 			}
 		});

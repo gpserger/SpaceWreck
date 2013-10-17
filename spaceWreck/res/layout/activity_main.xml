@@ -8,13 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 <!--I didn't spend too much time making the layout good and symmetrical -->
-    <Button
+    <Button
         android:id="@+id/placeX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Place X" />
+        android:text="@string/toggle_x" />
 
     <Button
         android:id="@+id/up"
@@ -23,7 +23,7 @@
         android:layout_below="@+id/grid"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="71dp"
-        android:text="^" />
+        android:text="@string/upText" />
 
     <Button
         android:id="@+id/down"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/up"
         android:layout_below="@+id/up"
-        android:text="V" />
+        android:text="@string/downText" />
 
     <Button
         android:id="@+id/right"
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/up"
         android:layout_toRightOf="@+id/up"
-        android:text=">" />
+        android:text="@string/rightText" />
 
     <Button
         android:id="@+id/left"
@@ -48,16 +48,15 @@
         android:layout_alignBaseline="@+id/down"
         android:layout_alignBottom="@+id/down"
         android:layout_toLeftOf="@+id/down"
-        android:text="&lt;" />
+        android:text="@string/leftText" />
 
     <TextView
         android:id="@+id/grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/right"
         android:layout_below="@+id/placeX"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="95dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
         android:text="@string/Textview"
         android:textSize="40sp" />
 
