@@ -90,11 +90,13 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//I'm supposed to move the X up here
-				if(row!=0){//Make sure the X can move up
-					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
-					row--;//Move the "master" vertical point up
-					myArray[row][col]="X";//Replace the X in the array
-				printText();//print array to the user
+				if(XExist==true){
+					if(row!=0){//Make sure the X can move up
+						myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+						row--;//Move the "master" vertical point up
+						myArray[row][col]="X";//Replace the X in the array
+					printText();//print array to the user
+					}
 				}
 			}
 		});
@@ -107,11 +109,13 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				//I'm supposed to move the X down here
-				if(row!=2){//Make sure the X can move down
-					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
-					row++;//Move the "master" vertical point down
-					myArray[row][col]="X";//Replace the X in the array
-				printText();//print array to the user
+				if(XExist==true){
+					if(row!=2){//Make sure the X can move down
+						myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+						row++;//Move the "master" vertical point down
+						myArray[row][col]="X";//Replace the X in the array
+					printText();//print array to the user
+					}
 				}
 			}
 		});
@@ -124,11 +128,13 @@ public class MainActivity extends Activity {
    			public void onClick(View v) {
    				// TODO Auto-generated method stub
    				//I'm supposed to move the X right here
-   				if(col!=2){//Make sure the X can move right
-   					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
-   					col++;//Move the "master" horizontal point right
-   					myArray[row][col]="X";//Replace the X in the array
-   				printText();//print array to the user
+   				if(XExist==true){
+   					if(col!=2){//Make sure the X can move right
+	   					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+	   					col++;//Move the "master" horizontal point right
+	   					myArray[row][col]="X";//Replace the X in the array
+	   				printText();//print array to the user
+   					}
    				}
    			}
    		});
@@ -141,11 +147,13 @@ public class MainActivity extends Activity {
   			public void onClick(View v) {
   				// TODO Auto-generated method stub
   				//I'm supposed to move the X left here
-  				if(col!=0){//Make sure the X can move left
-  					myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
-  					col--;//Move the "master" horizontal point left
-  					myArray[row][col]="X";//Replace the X in the array
-  				printText();//print array to the user
+  				if(XExist==true){
+  					if(col!=0){//Make sure the X can move left
+  						myArray[row][col]="0";//Remove the old X so we don't have duplicates by replacing it with 0 or "air"
+  						col--;//Move the "master" horizontal point left
+  						myArray[row][col]="X";//Replace the X in the array
+  					printText();//print array to the user
+  					}
   				}
   			}
   		});
